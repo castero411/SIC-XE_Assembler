@@ -5,7 +5,7 @@ public class Main {
         f1.FileDividing();
 
         PassOne passOne = new PassOne();
-        passOne.PassOne();
+        String[][] ST = passOne.PassOne();
 
 
     }
