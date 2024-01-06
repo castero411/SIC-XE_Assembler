@@ -8,9 +8,9 @@ class PassOne{
     String LOCCTR = "TextFiles/LocationCounter.txt";
     String SymbolTable = "TextFiles/SymbolTable.txt";
 
-    public String[][] PassOne(){
+    public void PassOne(){
 
-        String[][] SM = new String[20][2];
+
         try(BufferedReader reader = new BufferedReader(new FileReader(readFile));
             BufferedWriter writeLOCCTR = new BufferedWriter(new FileWriter(LOCCTR));
             BufferedWriter writeSymbol = new BufferedWriter(new FileWriter((SymbolTable)))
@@ -34,13 +34,12 @@ class PassOne{
 
                 writeLOCCTR.write(String.format("%04X_%s_%s_%s",opCodeN,parts[0],parts[1],parts[2]));
 
-
                 if(!parts[0].equals("null")) {
 
                     writeSymbol.write(String.format("%04X_%s", opCodeN, parts[0]));
 
                     writeSymbol.newLine();
-                    SM[i] = new String[] {String.valueOf(opCodeN), parts[0]};
+
                     i++;
                 }
                 writeLOCCTR.newLine();
@@ -53,7 +52,7 @@ class PassOne{
         } catch (IOException e) {
             throw new RuntimeException(e);
         }
-        return SM;
+
     }
 
     int getOPCode (String opcode,String ref){

@@ -4,9 +4,10 @@ public class Main {
         FileDivider f1 = new FileDivider();
         f1.FileDividing();
 
-        PassOne passOne = new PassOne();
-        String[][] ST = passOne.PassOne();
+        PassOne p1 = new PassOne();
+        p1.PassOne();
 
-
+        PassTwo p2 = new PassTwo();
+        p2.passTwo();
     }
 }
